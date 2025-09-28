@@ -32,6 +32,21 @@ jobs:
 
       - name: dbt deps
         run: dbt deps
+      
+      - name: Force IPv4 for DBT_HOST
+        shell: bash
+        run: |
+          set -e
+          if command -v getent >/dev/null 2>&1; then
+            IPV4=$(getent ahostsv4 "$DBT_HOST" | awk '{print $1; exit}')
+          else
+            IPV4=$(dig +short A "$DBT_HOST" | head -n1)
+          fi
+          if [ -z "$IPV4" ]; then
+            echo "No IPv4 found for $DBT_HOST"; exit 1
+          fi
+          echo "Using IPv4: $IPV4"
+          echo "DBT_HOST=$IPV4" >> "$GITHUB_ENV"
 
       - name: dbt debug (DEV)
         run: dbt debug --target dev
