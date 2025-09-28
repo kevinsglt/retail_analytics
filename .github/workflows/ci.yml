@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DBT_PROFILES_DIR: ${{ github.workspace }}  # utilise profiles.yml du repo
+
+      DBT_HOST:        ${{ secrets.DBT_HOST }}
+      DBT_PORT:        ${{ secrets.DBT_PORT }}
+      DBT_DB:          ${{ secrets.DBT_DB }}
+      DBT_USER:        ${{ secrets.DBT_USER }}
+      DBT_PASSWORD:    ${{ secrets.DBT_PASSWORD }}
+      DBT_SCHEMA_DEV:  ${{ secrets.DBT_SCHEMA_DEV }}
+      DBT_SCHEMA_PROD: ${{ secrets.DBT_SCHEMA_PROD }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -26,14 +35,6 @@ jobs:
 
       - name: dbt debug (DEV)
         run: dbt debug --target dev
-        env:
-          DBT_HOST: ${{ secrets.DBT_HOST }}
-          DBT_PORT: ${{ secrets.DBT_PORT }}
-          DBT_DB: ${{ secrets.DBT_DB }}
-          DBT_USER: ${{ secrets.DBT_USER }}
-          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
-          DBT_SCHEMA_DEV: ${{ secrets.DBT_SCHEMA_DEV }}
-          DBT_SCHEMA_PROD: ${{ secrets.DBT_SCHEMA_PROD }}
 
       - name: dbt build (DEV) on PR
         if: github.event_name == 'pull_request'
