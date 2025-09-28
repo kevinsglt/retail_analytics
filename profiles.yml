@@ -1,0 +1,25 @@
+retail_analytics:
+  target: dev
+  outputs:
+
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_HOST') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: "{{ env_var('DBT_PORT') | int }}"
+      dbname: "{{ env_var('DBT_DB') }}"
+      schema: "{{ env_var('DBT_SCHEMA_DEV') }}"
+      threads: 4
+      sslmode: require
+
+    prod:
+      type: postgres
+      host: "{{ env_var('DBT_HOST') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: "{{ env_var('DBT_PORT') | int }}"
+      dbname: "{{ env_var('DBT_DB') }}"
+      schema: "{{ env_var('DBT_SCHEMA_PROD') }}"
+      threads: 8
+      sslmode: require
