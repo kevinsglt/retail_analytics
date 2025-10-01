@@ -1,0 +1,8 @@
+# Ignorer les dossiers générés automatiquement
+target/
+dbt_packages/
+dbt_internal_packages/
+
+# Ignorer éventuellement les seeds si tu ne veux pas les lint
+seeds/
+tests/
