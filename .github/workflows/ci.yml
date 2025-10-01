@@ -49,7 +49,7 @@ jobs:
           DBT_SCHEMA_PROD: ${{ secrets.DBT_SCHEMA_PROD }}
 
       - name: SQLFluff lint
-        run: sqlfluff lint .
+        run: sqlfluff lint . --dialect postgres
 
       - name: dbt run (PROD) on main
         if: github.ref == 'refs/heads/main'
