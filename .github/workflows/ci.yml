@@ -38,7 +38,6 @@ jobs:
       # IMPORTANT : linter AVANT toute exécution dbt
       - name: SQLFluff lint
         run: sqlfluff lint --config .sqlfluff.ini --dialect postgres
-        working-directory: ${{ github.workspace }}
 
   build_dev:
     needs: lint
