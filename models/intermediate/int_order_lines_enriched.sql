@@ -12,6 +12,8 @@ stg_products as (
     select * from {{ ref('stg_products') }}
 ),
 
+-- noqa: ST06
+
 joined as (
 
     select
