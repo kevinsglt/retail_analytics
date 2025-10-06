@@ -12,8 +12,6 @@ stg_products as (
     select * from {{ ref('stg_products') }}
 ),
 
--- noqa: ST06
-
 joined as (
 
     select
@@ -25,7 +23,7 @@ joined as (
         p.product_display_name,
         p.price,
         ol.quantity,
-        (p.price * ol.quantity) as order_line_net_amount,
+        (p.price * ol.quantity) as order_line_net_amount, -- noqa: ST06
         p.collection,
         p.category,
 
