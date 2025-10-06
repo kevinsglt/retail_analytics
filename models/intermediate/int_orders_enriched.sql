@@ -18,6 +18,7 @@ joined as (
         o.order_date,
         o.net_amount,
         o.payment_method,
+        o.order_status,
         s.store_type as channel
 
     from stg_orders as o
