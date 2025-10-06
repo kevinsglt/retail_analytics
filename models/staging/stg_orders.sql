@@ -11,7 +11,7 @@ cleaned as (
         order_id,
         customer_id,
         store_id,
-        cast(order_datetime as date) as order_date,
+        cast(order_datetime as timestamp) as order_datetime,
         order_status,
         payment_method,
         net_amount
