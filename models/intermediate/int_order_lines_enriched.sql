@@ -27,7 +27,7 @@ joined as (
         p.collection,
         p.category,
 
-        o.order_date,
+        o.order_datetime,
         o.order_status,
         o.net_amount as total_order_net_amount,
         o.payment_method,

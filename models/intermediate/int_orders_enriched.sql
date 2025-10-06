@@ -15,7 +15,7 @@ joined as (
         o.order_id,
         o.customer_id,
         o.store_id,
-        o.order_date,
+        o.order_datetime,
         o.net_amount,
         o.payment_method,
         o.order_status,
