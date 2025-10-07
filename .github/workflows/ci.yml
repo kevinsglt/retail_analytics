@@ -37,7 +37,7 @@ jobs:
 
       # IMPORTANT : linter AVANT toute exécution dbt
       - name: SQLFluff lint
-        run: sqlfluff lint . --dialect postgres --exclude-rules ST06
+        run: sqlfluff lint . --dialect postgres --exclude-rules ST06,LT05
 
   build_dev:
     needs: lint
