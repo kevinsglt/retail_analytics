@@ -23,6 +23,8 @@ agg as (
     from dim_date as d
     left join int_orders_enriched as o
         on d.calendar_date = cast(o.order_datetime as date)
+    where
+        cast(calendar_date as date) >= '2025-01-01'
     group by d.calendar_date, o.store_id, o.channel
 
 )
