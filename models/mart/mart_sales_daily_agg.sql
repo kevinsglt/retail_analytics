@@ -25,7 +25,7 @@ agg as (
         on d.calendar_date = cast(o.order_datetime as date)
     where
         cast(d.calendar_date as date) >= '2025-01-01'
-    {# Premiers enregistrements #}
+    {# Les premiers enregistrements #}
     group by d.calendar_date, o.store_id, o.channel
 
 )

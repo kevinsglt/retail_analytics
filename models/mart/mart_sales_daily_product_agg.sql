@@ -17,7 +17,7 @@ agg as (
         ol.product_display_name,
         ol.collection,
         ol.category,
-        count(distinct ol.order_id) as order_with_product_cnt, {# Dans combien de commande se retrouve le produit / jour (granularité) #}
+        count(distinct ol.order_id) as order_with_product_cnt, {# Dans combien de commande se retrouve le produit / jour (une granularité) #}
         sum(ol.quantity) as units_sold,
         sum(ol.order_line_net_amount) as net_sales_eur,
         sum(ol.order_line_net_amount - ol.cost) as margin_eur
