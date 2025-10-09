@@ -17,7 +17,7 @@ agg as (
         ol.product_display_name,
         ol.collection,
         ol.category,
-        count(distinct ol.order_id) as order_with_product_cnt, {# Dans combien de commande se retrouve le produit / jour (granularité) #}
+        count(distinct ol.order_id) as order_with_product_cnt, {# Dans combien de commande se retrouve le produit / jour (une granularité) #}
         sum(ol.quantity) as units_sold,
         sum(ol.order_line_net_amount) as net_sales_eur,
         sum(ol.order_line_net_amount - ol.cost) as margin_eur
@@ -26,7 +26,8 @@ agg as (
     left join int_order_lines_enriched as ol
         on d.calendar_date = cast(ol.order_datetime as date)
     where
-        cast(calendar_date as date) >= '2025-01-01'
+        cast(d.calendar_date as date) >= '2025-01-01'
+    {# Premiers enregistrements #}
     group by
         d.calendar_date, ol.product_id, ol.product_display_name,
         ol.collection, ol.category
