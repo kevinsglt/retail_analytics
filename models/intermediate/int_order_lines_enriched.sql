@@ -22,7 +22,6 @@ joined as (
         ol.product_id,
         p.product_display_name,
         p.price,
-        p.cost,
         ol.quantity,
         (p.price * ol.quantity) as order_line_net_amount, -- noqa: ST06
         p.collection,
