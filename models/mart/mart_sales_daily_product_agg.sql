@@ -27,6 +27,7 @@ agg as (
         on d.calendar_date = cast(ol.order_datetime as date)
     where
         cast(d.calendar_date as date) >= '2025-01-01'
+    {# Premiers enregistrements #}
     group by
         d.calendar_date, ol.product_id, ol.product_display_name,
         ol.collection, ol.category
