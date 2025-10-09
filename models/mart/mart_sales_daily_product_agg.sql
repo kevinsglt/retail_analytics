@@ -26,7 +26,7 @@ agg as (
     left join int_order_lines_enriched as ol
         on d.calendar_date = cast(ol.order_datetime as date)
     where
-        cast(calendar_date as date) >= '2025-01-01'
+        cast(d.calendar_date as date) >= '2025-01-01'
     group by
         d.calendar_date, ol.product_id, ol.product_display_name,
         ol.collection, ol.category
