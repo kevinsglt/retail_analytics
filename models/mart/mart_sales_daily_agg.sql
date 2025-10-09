@@ -15,10 +15,10 @@ agg as (
         d.calendar_date,
         o.store_id,
         o.channel,
-        count(distinct customer_id) as total_customers,
-        count(distinct order_id) as total_orders,
-        sum(net_amount) as revenue_eur,
-        round(cast(sum(net_amount) / count(distinct customer_id) as int), 2) as aov_eur
+        count(distinct o.customer_id) as total_customers,
+        count(distinct o.order_id) as total_orders,
+        sum(o.net_amount) as revenue_eur,
+        round(cast(sum(o.net_amount) / count(distinct o.customer_id) as int), 2) as aov_eur
 
     from dim_date as d
     left join int_orders_enriched as o
