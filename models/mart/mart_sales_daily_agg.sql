@@ -21,11 +21,14 @@ agg as (
         round(cast(sum(o.net_amount) / count(distinct o.customer_id) as int), 2) as aov_eur
 
     from dim_date as d
+
     left join int_orders_enriched as o
         on d.calendar_date = cast(o.order_datetime as date)
+
     where
         cast(d.calendar_date as date) >= '2025-01-01'
-    {# Les premiers enregistrements #}
+        and cast(d.calendar_date as date) <= current_date
+
     group by d.calendar_date, o.store_id, o.channel
 
 )

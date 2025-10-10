@@ -36,8 +36,10 @@ joined as (
         o.channel
 
     from stg_order_lines as ol
+
     left join int_orders_enriched as o
         on ol.order_id = o.order_id
+
     left join stg_products as p
         on ol.product_id = p.product_id
 
