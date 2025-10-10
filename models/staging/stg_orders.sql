@@ -49,6 +49,15 @@ adjusted as (
         payment_method,
         net_amount
     from ordered
+
+),
+
+filtered as (
+
+    select *
+    from adjusted
+    where order_datetime <= current_timestamp
+
 )
 
-select * from adjusted
+select * from filtered
