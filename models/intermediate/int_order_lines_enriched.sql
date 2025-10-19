@@ -17,9 +17,9 @@ joined as (
     select
 
         ol.order_line_id,
-
         ol.order_id,
         ol.product_id,
+        o.customer_id,
         p.product_display_name,
         p.price,
         p.cost,
