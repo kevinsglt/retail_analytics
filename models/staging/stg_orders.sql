@@ -56,7 +56,9 @@ filtered as (
 
     select *
     from adjusted
-    where order_datetime <= current_timestamp
+    where
+        order_datetime <= current_timestamp
+        and order_status = 'PAID'
 
 )
 

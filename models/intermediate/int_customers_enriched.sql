@@ -29,7 +29,9 @@ base as (
         cos.last_order_datetime,
         cos.total_orders,
         cos.total_spent_eur,
+        cos.total_units,
         cos.avg_order_value_eur,
+        cos.avg_unit_per_order,
         (cast(cos.last_order_datetime as date) - cast(cfo.first_order_datetime as date)) as customer_lifetime_days
 
     from stg_customers as c
