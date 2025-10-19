@@ -26,7 +26,7 @@ final as (
         c.total_units,
         c.avg_unit_per_order,
         case
-            when share_of_spend_ecom >= 0.5 then 'E-commerce'
+            when cs.share_of_spend_ecom >= 0.5 then 'E-commerce'
             else 'Physique'
         end as preferred_channel
 

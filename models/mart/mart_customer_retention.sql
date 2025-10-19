@@ -74,7 +74,7 @@ final as (
     left join cohort_size as c
         on a.cohort_month = c.cohort_month
 
-    order by cohort_month, period_month
+    order by a.cohort_month, a.period_month
 
 )
 
