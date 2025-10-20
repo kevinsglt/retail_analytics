@@ -24,7 +24,11 @@ activity as (
         cohort_month,
         order_month,
         date_part('month', age(order_month, cohort_month))
-        + 12 * (date_part('year', age(order_month, cohort_month))) as period_month
+        + 12 * (date_part('year', age(order_month, cohort_month))) as period_month,
+        concat('M+', (
+            date_part('month', age(order_month, cohort_month))
+            + 12 * date_part('year', age(order_month, cohort_month))
+        )) as period_label
 
     from base
 ),
@@ -35,11 +39,12 @@ active_customers as (
 
         cohort_month,
         period_month,
+        period_label,
         count(distinct customer_id) as active_customers
 
     from activity
 
-    group by cohort_month, period_month
+    group by cohort_month, period_month, period_label
 
 ),
 
@@ -64,6 +69,7 @@ final as (
 
         a.cohort_month,
         a.period_month,
+        a.period_label,
         c.cohort_size,
         a.active_customers,
         round((cast(a.active_customers as numeric) / cast(c.cohort_size as numeric)), 3) as retention_rate,
@@ -74,7 +80,7 @@ final as (
     left join cohort_size as c
         on a.cohort_month = c.cohort_month
 
-    order by a.cohort_month, a.period_month
+    order by a.cohort_month, a.period_month, a.period_label
 
 )
 
