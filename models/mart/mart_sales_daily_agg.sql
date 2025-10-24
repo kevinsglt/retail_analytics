@@ -18,7 +18,7 @@ agg as (
         count(distinct o.customer_id) as total_customers,
         count(distinct o.order_id) as total_orders,
         sum(o.net_amount) as revenue_eur,
-        round(cast(sum(o.net_amount) / count(distinct o.customer_id) as int), 2) as aov_eur
+        round(cast(sum(o.net_amount) / count(distinct o.order_id) as int), 2) as aov_eur
 
     from dim_date as d
 
