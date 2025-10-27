@@ -1,7 +1,6 @@
 # 🛍️ Retail Analytics  
 ### Industrialiser l’analyse de données omnicanales pour le Retail et le Luxe  
 
----
 
 ## 🎯 Objectif du projet  
 
@@ -25,7 +24,6 @@ Le projet met en œuvre les **bonnes pratiques de l’Analytics Engineering mode
 - Environnement de **développement / production** différencié  
 - Tables structurées par **schéma logique**  
 
----
 
 ### 🔸 Transformation  
 
@@ -35,7 +33,6 @@ Réalisée avec **dbt Core** :
 - Tests automatiques (`not_null`, `unique`, `relationships`)  
 - Macros et CTE pour une logique transparente  
 
----
 
 ### 🔸 Orchestration  
 
@@ -45,7 +42,6 @@ Industrialisation via **GitHub Actions (CI/CD)** :
 - Build et déploiement automatisé sur `prod` après validation  
 - Respect des conventions **Gitflow** (`feature/`, `fix/`, `chore/`, etc.)  
 
----
 
 ### 🔸 Visualisation  
 
@@ -55,7 +51,6 @@ Industrialisation via **GitHub Actions (CI/CD)** :
 - Analyses client, produit et rétention  
 - Vue 360° sur la performance omnicanale  
 
----
 
 ## 🧮 Modélisation analytique  
 
@@ -115,7 +110,6 @@ Chaque `push` ou `pull request` déclenche un pipeline complet :
 2. **Build & Test dbt** → compilation + tests automatiques  
 3. **Déploiement** → promotion vers `prod` après validation  
 
----
 
 ### 🔸 Linter SQLFluff  
 
@@ -124,7 +118,6 @@ Chaque `push` ou `pull request` déclenche un pipeline complet :
 - Règles personnalisées (`exclude_rules`, `warning_rules`)  
 - Intégré dans la CI pour éviter tout merge non conforme  
 
----
 
 ### 🔸 Tests de qualité  
 
