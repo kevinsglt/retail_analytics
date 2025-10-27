@@ -166,7 +166,6 @@ Les dashboards Tableau s’articulent autour des **4 volets d’analyse** :
 
 **Kevin S.**  
 Consultant Data Analyst / Analytics Engineer  
-Spécialisé en Retail, E-commerce & Luxe  
 
 Stack : `dbt · Supabase · Tableau · GitHub Actions`  
 🔗 [linkedin.com/in/kevin-semedo-guiolet](https://linkedin.com/in/kevin-semedo-guiolet)  
@@ -176,5 +175,3 @@ Stack : `dbt · Supabase · Tableau · GitHub Actions`
 ## 🚀 Pour aller plus loin  
 
 - 🔗 [Dashboard Tableau Public](https://public.tableau.com/app/profile/kevin.semedo.guiolet/viz/RetailAnalyticsProject_17615269742130/RetailAnalyticsProject)  
-- 🔗 [Carrousel LinkedIn](#)  
-- 🔗 [Documentation dbt (GitHub Pages)](#)
