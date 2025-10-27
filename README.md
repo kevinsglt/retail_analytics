@@ -167,7 +167,6 @@ Les dashboards Tableau s’articulent autour des **4 volets d’analyse** :
 **Kevin S.**  
 Consultant Data Analyst / Analytics Engineer  
 
-Stack : `dbt · Supabase · Tableau · GitHub Actions`  
 🔗 [linkedin.com/in/kevin-semedo-guiolet](https://linkedin.com/in/kevin-semedo-guiolet)  
 
 ---
