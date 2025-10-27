@@ -13,7 +13,6 @@ L’objectif est de **centraliser, fiabiliser et industrialiser** les données i
 
 Le projet met en œuvre les **bonnes pratiques de l’Analytics Engineering moderne** (tests, CI/CD, documentation, modularité) afin de produire des **modèles de données fiables, réutilisables et prêts à la décision**.  
 
----
 
 ## 🧱 Architecture technique  
 
@@ -80,7 +79,6 @@ Tables prêtes à la consommation BI :
 - `mart_customer_360` → *client*  
 - `mart_product_360` → *produit*  
 
----
 
 ## 💼 Cas d’usage métier  
 
@@ -98,7 +96,6 @@ Le projet **Retail Analytics** s’articule autour de **4 axes d’analyse clés
 ### 4️⃣ 🔁 Customer Rétention  
 > **Objectif :** mesurer la fidélité client dans le temps et analyser les comportements de réachat et de churn.  
 
----
 
 ## ⚙️ Industrialisation & Qualité  
 
@@ -124,7 +121,6 @@ Chaque `push` ou `pull request` déclenche un pipeline complet :
 - `not_null` sur les clés primaires  
 - `relationships` pour valider les jointures  
 
----
 
 ## 📊 Visualisation  
 
@@ -140,7 +136,6 @@ Les dashboards Tableau s’articulent autour des **4 volets d’analyse** :
 - Les **60 premiers jours** après achat sont une **fenêtre clé de réachat**  
 - Moins de nouveaux clients, mais une **fidélité en nette progression**  
 
----
 
 ## 🧠 Stack technique  
 
@@ -153,7 +148,6 @@ Les dashboards Tableau s’articulent autour des **4 volets d’analyse** :
 | **Visualisation** | Tableau Public | Dashboards interactifs |
 | **Versioning** | Git + GitHub | Collaboration & tracking |
 
----
 
 ## 👤 Auteur  
 
