@@ -163,6 +163,3 @@ Versioning : Git + GitHub - Collaboration & tracking
 Kevin S.
 Consultant Data Analyst / Analytics Engineer
 linkedin.com/in/kevin-semedo-guiolet
-Structure dbt	stg_, int_, mart_
-Performance	CTE maîtrisées, requêtes optimisées
-Self-Service BI	Marts prêts à être consommés
